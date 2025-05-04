@@ -1,128 +1,39 @@
-import { getNextType } from '../unit';
 import * as reducerType from '../unit/reducerType';
-import Block from '../unit/block';
-import keyboard from './keyboard';
 
-function nextBlock(next = getNextType()) {
-  return {
-    type: reducerType.NEXT_BLOCK,
-    data: next,
-  };
-}
+export const toggleStats = () => ({
+  type: reducerType.STATS_TOGGLE_VISIBILITY,
+});
 
-function moveBlock(option) {
-  return {
-    type: reducerType.MOVE_BLOCK,
-    data: option.reset === true ? null : new Block(option),
-  };
-}
+export const updateTotalGames = (count) => ({
+  type: reducerType.UPDATE_TOTAL_GAMES,
+  data: count,
+});
 
-function speedStart(n) {
-  return {
-    type: reducerType.SPEED_START,
-    data: n,
-  };
-}
+export const updateHighestScore = (score) => ({
+  type: reducerType.UPDATE_HIGHEST_SCORE,
+  data: score,
+});
 
-function speedRun(n) {
-  return {
-    type: reducerType.SPEED_RUN,
-    data: n,
-  };
-}
+export const updateLongestDuration = (duration) => ({
+  type: reducerType.UPDATE_LONGEST_DURATION,
+  data: duration,
+});
 
-function startLines(n) {
-  return {
-    type: reducerType.START_LINES,
-    data: n,
-  };
-}
+export const updateLinesCleared = (count) => ({
+  type: reducerType.UPDATE_LINES_CLEARED,
+  data: count,
+});
 
-function matrix(data) {
-  return {
-    type: reducerType.MATRIX,
-    data,
-  };
-}
-
-function lock(data) {
-  return {
-    type: reducerType.LOCK,
-    data,
-  };
-}
-
-function clearLines(data) {
-  return {
-    type: reducerType.CLEAR_LINES,
-    data,
-  };
-}
-
-function points(data) {
-  return {
-    type: reducerType.POINTS,
-    data,
-  };
-}
-
-function max(data) {
-  return {
-    type: reducerType.MAX,
-    data,
-  };
-}
-
-function reset(data) {
-  return {
-    type: reducerType.RESET,
-    data,
-  };
-}
-
-function drop(data) {
-  return {
-    type: reducerType.DROP,
-    data,
-  };
-}
-
-function pause(data) {
-  return {
-    type: reducerType.PAUSE,
-    data,
-  };
-}
-
-function music(data) {
-  return {
-    type: reducerType.MUSIC,
-    data,
-  };
-}
-
-function focus(data) {
-  return {
-    type: reducerType.FOCUS,
-    data,
-  };
-}
+export const updateRecentScores = (scores) => ({
+  type: reducerType.UPDATE_RECENT_SCORES,
+  data: scores,
+});
 
 export default {
-  nextBlock,
-  moveBlock,
-  speedStart,
-  speedRun,
-  startLines,
-  matrix,
-  lock,
-  clearLines,
-  points,
-  reset,
-  max,
-  drop,
-  pause,
-  keyboard,
-  music,
-  focus,
+  toggleStats,
+  updateTotalGames,
+  updateHighestScore,
+  updateLongestDuration,
+  updateLinesCleared,
+  updateRecentScores,
 };
